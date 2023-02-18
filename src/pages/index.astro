@@ -1,0 +1,88 @@
+---
+const links = [
+  {
+    name: "Portfolio",
+    url: "https://helmisatria.com",
+  },
+  {
+    name: "Personal Website",
+    url: "https://helmisatria.com",
+  },
+];
+
+const socialLinks = [
+  {
+    name: "Twitter",
+    url: "https://twitter.com/helmisatria_",
+    image: "https://cdn.simpleicons.org/twitter/white",
+  },
+  {
+    name: "TikTok",
+    url: "https://tiktok.com/@helmisatria_",
+    image: "https://cdn.simpleicons.org/tiktok/white",
+  },
+  {
+    name: "Github",
+    url: "https://github.com/helmisatria",
+    image: "https://cdn.simpleicons.org/github/white",
+  },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Helmi Satria</title>
+  </head>
+  <body class="bg-gradient-to-b from-cyan-100 bg-cyan-800">
+    <main
+      class="max-w-sm w-screen min-h-screen mx-auto shadow-lg py-20 px-5 flex flex-col items-stretch justify-center"
+    >
+      <div
+        class="kotak rounded-lg w-[160px] min-h-[160px] h-[160px] self-center"
+      >
+        <img
+          class="w-full h-full rounded-full"
+          src="https://images.unsplash.com/photo-1488161628813-04466f872be2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1364&q=80"
+          alt="Helmi Satria"
+        />
+      </div>
+
+      <div class="flex text-cyan-50 flex-col items-center mt-8">
+        <h1 class="text-2xl font-semibold">Helmi Satria</h1>
+        <p>Fullstack Javascript Developer</p>
+      </div>
+
+      <ul class="mt-10 space-y-3">
+        {
+          links.map((link) => (
+            <li class="hover:-translate-y-1 transition duration-150 hover:shadow">
+              <a href={link.url}>
+                <div class="kotak font-semibold text-lg text-white text-center tracking-wide rounded-lg w-full bg-cyan-700 hover:bg-cyan-800 duration-150 px-10 py-6">
+                  {link.name}
+                </div>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+
+      <ul class="flex mt-10 justify-center space-x-4">
+        {
+          socialLinks.map((link) => (
+            <li class="hover:-translate-y-1 duration-100">
+              <a href={link.url}>
+                <div class="rounded-full w-[60px] h-[60px] bg-cyan-900 border-2 border-cyan-700 p-4 hover:bg-cyan-800 duration-100">
+                  <img src={link.image} alt="" />
+                </div>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </main>
+  </body>
+</html>
